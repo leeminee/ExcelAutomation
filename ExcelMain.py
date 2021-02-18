@@ -1,26 +1,15 @@
-import openpyxl     #pip install openpyxl==2.6.2
+import datetime
+import openpyxl
 
-write_wb = openpyxl.Workbook()
-write_ws = write_wb.active
+sample_items = [(datetime.datetime.strptime('2021-02-18', '%Y-%m-%d'), 'Product Name 1', 5, 10000)]
 
-write_ws = write_wb.active
-write_ws['A1'] = '수량'
-write_ws['B1'] = '가격'
-write_ws['C1'] = '금액'
+def write_to_file(filepath):
+    wb = openpyxl.Workbook()
+    for sheet in wb.sheetnames:
+        wb.remove(wb[sheet])
 
-write_ws.append([25,5000,125000])
-write_ws.append([30,5500,60000])
-write_ws.append([35,8000,9000])
+        ws = wb.create_sheet(title='2021', index=0)
 
-for i in range(5):
-    write_ws.append([i+1, i+2, i+3])
-
-write_ws.cell(5,5,'셀추가')
-
-write_wb.save('/test.xlsx')
-
-load_wb = openpyxl.load_workbook('./test.xlsx', data_only=True)
-
-load_ws = load_wb['Sheet']
-
-print(load_ws['A1'].value)
+        ws.merge_cells('A1:F1')
+        ws['A1'] = 'Inventory List'
+        cell = ws['A1']

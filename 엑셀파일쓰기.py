@@ -14,4 +14,4 @@ write_ws.append([1,2,3])
 
 # 셀 단위로 추가
 write_ws.cell(5,5,'5행5열')
-write_wb.save('C:/test/숫자.xlsx')
+write_wb.save('C:/test/숫자2.xlsx')

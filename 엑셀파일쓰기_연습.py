@@ -1,3 +1,5 @@
+
+# from 모듈이름 import 모듈 함수
 from openpyxl import Workbook
 
 write_wb = Workbook()

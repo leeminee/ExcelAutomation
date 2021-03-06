@@ -8,7 +8,8 @@ class Test:
         self.msg2 = msg2
 
 def select_all():
-    conn = cx_Oracle.connect('mllee', 'mllee', 'localhost/orcl')
+    conn = cx_Oracle.connect('system', 'mllee', 'localhost/orcl')
+    print(">>connect ")
     try:
         with conn.cursor() as curs:
             sql = "select * from alarm_test"

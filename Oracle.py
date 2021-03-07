@@ -1,4 +1,5 @@
 import cx_Oracle
+from openpyxl import Workbook
 
 class Test:
     def __init__(self, uuid, host, msg1, msg2):
@@ -16,8 +17,17 @@ def select_all():
             print("sql : "+sql)
             curs.execute(sql)
             rs = curs.fetchall()
+
+            wb = Workbook()
+            ws = wb.active
+
+            # 첫 행 입력
+            ws.append(('UUID','HOST','Massage1','Massage2'))
+
             for row in rs:
                 print(row)
+                ws.append(row)
+            wb.save('C:/test/Alarm현황.xlsx')
     finally:
         conn.close()
 

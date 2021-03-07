@@ -8,17 +8,30 @@ class Test:
         self.msg2 = msg2
 
 def select_all():
-    conn = cx_Oracle.connect('system', 'manager', '127.0.0.1/orcl')
-    print(">>connect ")
+    conn = cx_Oracle.connect('system','manager','orcl')
+    print(">> Oracle DB connect ")
     try:
         with conn.cursor() as curs:
             sql = "select * from alarm_test"
+            print("sql : "+sql)
             curs.execute(sql)
             rs = curs.fetchall()
             for row in rs:
                 print(row)
     finally:
         conn.close()
+
+    # cursor = conn.cursor()
+    #
+    # cursor.execute("select * from alarm_test")
+    #
+    # row = cursor.fetchone()
+    #
+    # while row:
+    #     print("uuid : "+row[0] + ", host : "+row[1]+", msg1 : "+row[2]+", msg2 : "+row[3])
+    #     row = cursor.fetchone()
+    # print()
+    # conn.close()
 
 select_all()
 # dg4odbc

@@ -22,7 +22,7 @@ def select_all():
             ws = wb.active
 
             # 첫 행 입력
-            ws.append(('UUID','HOST','Massage1','Massage2'))
+            ws.append(('UUID','HOST','Msg1','Massage2'))
 
             for row in rs:
                 print(row)

@@ -1,6 +1,7 @@
 import cx_Oracle
 from openpyxl import Workbook
 
+# TODO : Python을 exe 실행파일로 만들어서 경로입력하면 해당경로에 엑셀파일 만들어지도록 개발
 class Test:
     def __init__(self, uuid, host, msg1, msg2):
         self.uuid = uuid

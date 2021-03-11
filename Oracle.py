@@ -1,6 +1,7 @@
 import cx_Oracle
 from openpyxl import Workbook
 
+# TODO : Python을 exe 실행파일로 만들어서 경로입력하면 해당경로에 엑셀파일 만들어지도록 개발
 class Test:
     def __init__(self, uuid, host, msg1, msg2):
         self.uuid = uuid
@@ -22,7 +23,7 @@ def select_all():
             ws = wb.active
 
             # 첫 행 입력
-            ws.append(('UUID','HOST','Massage1','Massage2'))
+            ws.append(('UUID','HOST','Msg1','Massage2'))
 
             for row in rs:
                 print(row)

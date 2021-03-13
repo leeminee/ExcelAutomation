@@ -11,12 +11,12 @@ conn, cursor = None, None
 
 def select_all():
     try:
-        cnxn = pyodbc.connect('DRIVER={Altibase.jdbc.driver.AltibaseDriver}; SERVER=localhost; DATABASE=mbdb; UID=ipageon; PWD=ipageon')
-        cursor = cnxn.cursor()
-        cnxn = pyodbc.connect('DSN=mydb; PWD=ipageon')
-        # conn = jaydebeapi.connect(classname, ['jdbc:Altibase://10.200.2.130:20300/mydb', '%s' % dbuser, '%s' % passwd],classfile)
-        # cursor = conn.cursor()
-        # print("conn : " + conn)
+        # cnxn = pyodbc.connect('DRIVER={Altibase.jdbc.driver.AltibaseDriver}; SERVER=localhost; DATABASE=mbdb; UID=ipageon; PWD=ipageon')
+        # cursor = cnxn.cursor()
+        # cnxn = pyodbc.connect('DSN=mydb; PWD=ipageon')
+        conn = jaydebeapi.connect(classname, ['jdbc:Altibase://10.200.2.130:20300/mydb', '%s' % dbuser, '%s' % passwd],classfile)
+        cursor = conn.cursor()
+        print("conn : " + conn)
         print(">> Altibase connection")
 
         sql = "SELECT * FROM STAT_MCPPTT_SUBS ORDER BY STIME DESC LIMIT 1"

@@ -17,7 +17,7 @@ def select_all():
         cursor = conn.cursor()
         print(">> Altibase connection")
 
-        sql = "SELECT * FROM STAT_MCPTT_SUBS ORDER BY STIME DESC LIMIT 1"
+        sql = "SELECT * FROM STAT_RES_CPU_DAY ORDER BY STIME DESC LIMIT 1"
         cursor.execute(sql)
 
         data = cursor.fetchall()

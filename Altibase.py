@@ -10,26 +10,30 @@ passwd = 'ipageon'
 conn, cursor = None, None
 
 
-def select_all():
+def altibase_conn():
     try:
         conn = jaydebeapi.connect(classname, "jdbc:Altibase://10.200.2.130:20300/mydb", [dbuser, passwd], classfile)
 
         cursor = conn.cursor()
         print(">> Altibase connection")
 
-        sql = "SELECT * FROM STAT_RES_CPU_DAY ORDER BY STIME DESC LIMIT 1"
-        cursor.execute(sql)
-
-        data = cursor.fetchall()
-
-        for x in data:
-            print(x)
+        select_all(cursor)
 
         cursor.close()
         conn.close()
     except Exception as msg:
-        print('Error Message : %s' %msg)
+        print('Error Message : %s' % msg)
 
 
-select_all()
+def select_all(cursor):
+    sql = "SELECT * FROM STAT_RES_CPU_DAY ORDER BY STIME DESC LIMIT 1"
+    cursor.execute(sql)
+
+    data = cursor.fetchall()
+
+    for x in data:
+        print(x)
+
+
+altibase_conn()
 # dg4odbc

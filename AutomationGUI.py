@@ -1,7 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 from openpyxl import Workbook
-from Altibase import select_all
+# from Altibase import select_all
+from Oracle import select_all
 import datetime
 
 window = Tk()

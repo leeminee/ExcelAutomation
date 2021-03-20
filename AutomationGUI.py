@@ -29,7 +29,7 @@ def excelDownload():
     write_ws.cell(2,6,'합계')
 
 
-    write_wb.save(path.get()+"/보고서관리2.xlsx")
+    write_wb.save(path.get()+"/보고서관리3.xlsx")
 
 
 

@@ -1,8 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 from openpyxl import Workbook
-# from Altibase import select_all
-from Oracle import select_all
+from Altibase import select_all
+# from Oracle import select_all
 import datetime
 
 window = Tk()
@@ -29,7 +29,7 @@ def excelDownload():
     write_ws.cell(2,6,'합계')
 
 
-    write_wb.save(path.get()+"/보고서관리3.xlsx")
+    write_wb.save(path.get()+"/보고서관리1.xlsx")
 
 
 

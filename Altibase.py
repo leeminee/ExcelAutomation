@@ -26,7 +26,7 @@ def altibase_conn():
 
 
 def select_all(cursor):
-    sql = "SELECT * FROM STAT_RES_CPU_DAY ORDER BY STIME DESC LIMIT 1"
+    sql = "SELECT * FROM STAT_RES_MEMORY_DAY ORDER BY STIME DESC LIMIT 1"
     cursor.execute(sql)
 
     data = cursor.fetchall()

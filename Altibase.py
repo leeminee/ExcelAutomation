@@ -33,6 +33,16 @@ def select_all(cursor):
 
     for x in data:
         print(x)
+        data_parsing(x)
+
+def data_parsing(data):
+    host = data[6]
+    usage = data[8]
+    total = data[10]
+    print("Host : " +host)
+    print("Usage : " +str(usage))
+    print("Total : " +str(total))
+
 
 
 altibase_conn()

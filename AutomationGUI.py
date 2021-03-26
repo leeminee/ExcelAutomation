@@ -29,7 +29,7 @@ def excelDownload():
     write_ws.cell(2, 6, '합계')
 
 
-    write_wb.save(path.get() + "/보고서관리1_("+nowDate+").xlsx")
+    write_wb.save(path.get() + "/보고서관리2_("+nowDate+").xlsx")
 
 
 ttk.Label(window, text="startDate : ").grid(row=0, column=0, padx=10, pady=10)
